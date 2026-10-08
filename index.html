@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>Aviator Analysis Bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header>
+      <div class="logo">✈️</div>
+      <div>
+        <h1>Aviator Analyzer</h1>
+        <p>Statistics & history analysis</p>
+      </div>
+    </header>
+
+    <section class="warning">
+      <strong>⚠️ Important</strong>
+      <p>
+        This tool analyzes previous results only. It cannot reliably predict
+        the next Aviator multiplier or guarantee winnings.
+      </p>
+    </section>
+
+    <section class="card">
+
+      <h2>Add Round</h2>
+
+      <div class="input-row">
+        <input
+          type="number"
+          id="multiplierInput"
+          placeholder="e.g. 2.35"
+          min="1"
+          step="0.01"
+        >
+
+        <button id="addButton">Add</button>
+      </div>
+
+      <p class="hint">Enter the multiplier shown after each round.</p>
+
+      <button id="clearButton" class="danger">
+        Clear All Results
+      </button>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Analysis</h2>
+
+      <div class="stats">
+
+        <div class="stat">
+          <span>Total Rounds</span>
+          <strong id="totalRounds">0</strong>
+        </div>
+
+        <div class="stat">
+          <span>Average</span>
+          <strong id="average">0.00x</strong>
+        </div>
+
+        <div class="stat">
+          <span>Median</span>
+          <strong id="median">0.00x</strong>
+        </div>
+
+        <div class="stat">
+          <span>Highest</span>
+          <strong id="highest">0.00x</strong>
+        </div>
+
+        <div class="stat">
+          <span>Lowest</span>
+          <strong id="lowest">0.00x</strong>
+        </div>
+
+        <div class="stat">
+          <span>Below 2x</span>
+          <strong id="belowTwo">0%</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Volatility</h2>
+
+      <div id="volatilityBox" class="volatility neutral">
+        <strong id="volatilityTitle">No data</strong>
+        <p id="volatilityText">
+          Add some rounds to calculate volatility.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Recent Pattern</h2>
+
+      <div class="pattern">
+
+        <div>
+          <span>Current Low Streak</span>
+          <strong id="lowStreak">0</strong>
+        </div>
+
+        <div>
+          <span>Current High Streak</span>
+          <strong id="highStreak">0</strong>
+        </div>
+
+        <div>
+          <span>Longest Low Streak</span>
+          <strong id="longestLow">0</strong>
+        </div>
+
+        <div>
+          <span>Longest High Streak</span>
+          <strong id="longestHigh">0</strong>
+        </div>
+
+      </div>
+
+      <p class="small-note">
+        Low = below 2x. High = 2x or above.
+      </p>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Recent Results</h2>
+
+      <div id="results" class="results">
+        <p class="empty">No rounds entered yet.</p>
+      </div>
+
+    </section>
+
+    <section class="card">
+
+      <h2>Multiplier Chart</h2>
+
+      <div id="chart" class="chart">
+        <p class="empty">Add rounds to see the chart.</p>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>
+        Aviator Analyzer is an educational statistics tool.
+      </p>
+      <p>
+        Past results do not determine future results.
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
